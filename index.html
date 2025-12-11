@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical History Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- ========================================================= -->
+      <!-- PAGE TITLE -->
+      <!-- ========================================================= -->
+      <h1>Medical History Form</h1>
+
+      <form id="medicalForm">
+        <!-- ========================================================= -->
+        <!-- BASIC PATIENT INFO -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Patient Information</h2>
+
+          <div class="two-col">
+            <div class="field">
+              <label>Name:</label>
+              <input type="text" />
+            </div>
+
+            <div class="field">
+              <label>Date of Birth:</label>
+              <input type="date" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Address:</label>
+            <input type="text" placeholder="Enter full residential address" />
+          </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- INSURANCE INFORMATION -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Insurance Information</h2>
+
+          <div class="two-col">
+            <div class="field">
+              <label>Name of Company:</label>
+              <input type="text" />
+            </div>
+
+            <div class="field">
+              <label>Group Number:</label>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Member ID:</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- PRIMARY DOCTOR DETAILS -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Primary Health Care Provider</h2>
+
+          <div class="two-col">
+            <div class="field">
+              <label>Doctor's Name:</label>
+              <input type="text" />
+            </div>
+
+            <div class="field">
+              <label>Phone Number:</label>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Hospital Address:</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MEDICATIONS TABLE -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Medications</h2>
+
+          <table class="medication-table">
+            <thead>
+              <tr>
+                <th>Medication Name</th>
+                <th>Dose</th>
+                <th>Frequency</th>
+                <th>Purpose (For what?)</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- 10 editable rows -->
+              <!-- These rows require no JS → syllabus safe -->
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+
+              <!-- duplicate row block -->
+              <!-- (You can duplicate more if needed) -->
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- ALLERGIES -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Allergies / Contraindications</h2>
+
+          <label
+            ><input type="checkbox" id="noAllergies" /> No known
+            allergies</label
+          >
+
+          <!-- Allergy entry rows (you will handle JS later) -->
+          <div id="allergyTable">
+            <div class="allergy-row">
+              <input type="text" placeholder="Allergy Name" />
+              <input type="text" placeholder="Reaction" />
+            </div>
+          </div>
+
+          <button type="button" id="addAllergy">Add Allergy</button>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MEDICAL HISTORY CHECKBOX GRID -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Medical History</h2>
+
+          <div class="medical-history-columns">
+            <label><input type="checkbox" value="Anemia" /> Anemia</label>
+            <label><input type="checkbox" value="Anxiety" /> Anxiety</label>
+            <label><input type="checkbox" value="Arthritis" /> Arthritis</label>
+            <label><input type="checkbox" value="Asthma" /> Asthma</label>
+            <label><input type="checkbox" value="Cancer" /> Cancer</label>
+            <label><input type="checkbox" value="CHF" /> CHF</label>
+            <label><input type="checkbox" value="COPD" /> COPD</label>
+            <label
+              ><input type="checkbox" value="Depression" /> Depression</label
+            >
+            <label><input type="checkbox" value="Diabetes" /> Diabetes</label>
+            <label><input type="checkbox" value="GERD" /> GERD</label>
+            <label
+              ><input type="checkbox" value="Hypertension" />
+              Hypertension</label
+            >
+            <label
+              ><input type="checkbox" value="Kidney Disease" /> Kidney
+              Disease</label
+            >
+            <label><input type="checkbox" value="Migraines" /> Migraines</label>
+            <label
+              ><input type="checkbox" value="Sleep Apnea" /> Sleep Apnea</label
+            >
+            <label><input type="checkbox" value="Stroke" /> Stroke</label>
+            <label><input type="checkbox" value="Ulcers" /> Ulcers</label>
+          </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- OTHER MEDICAL HISTORY -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Other Medical History</h2>
+          <textarea placeholder="Enter additional history..."></textarea>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- SURGICAL HISTORY (CSS GRID VERSION) -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Surgical History</h2>
+
+          <!-- Each surgery item = 1 grid row -->
+          <!-- Grid columns: Procedure | YES | NO -->
+          <div class="surgery-grid">
+            <!-- AAA Repair -->
+            <div class="surgery-label">AAA Repair</div>
+            <label
+              ><input type="radio" name="AAA_Repair" value="Yes" /> Yes</label
+            >
+            <label
+              ><input type="radio" name="AAA_Repair" value="No" /> No</label
+            >
+
+            <!-- Colon Surgery -->
+            <div class="surgery-label">Colon Surgery</div>
+            <label
+              ><input type="radio" name="Colon_Surgery" value="Yes" />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="Colon_Surgery" value="No" /> No</label
+            >
+
+            <!-- Joint Replacement -->
+            <div class="surgery-label">Joint Replacement</div>
+            <label
+              ><input type="radio" name="Joint_Replacement" value="Yes" />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="Joint_Replacement" value="No" />
+              No</label
+            >
+
+            <!-- Appendectomy -->
+            <div class="surgery-label">Appendectomy</div>
+            <label
+              ><input type="radio" name="Appendectomy" value="Yes" /> Yes</label
+            >
+            <label
+              ><input type="radio" name="Appendectomy" value="No" /> No</label
+            >
+
+            <!-- Intestine Surgery -->
+            <div class="surgery-label">Intestine Surgery</div>
+            <label
+              ><input type="radio" name="Intestine_Surgery" value="Yes" />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="Intestine_Surgery" value="No" />
+              No</label
+            >
+
+            <!-- Eye Surgery -->
+            <div class="surgery-label">Eye Surgery</div>
+            <label
+              ><input type="radio" name="Eye_Surgery" value="Yes" /> Yes</label
+            >
+            <label
+              ><input type="radio" name="Eye_Surgery" value="No" /> No</label
+            >
+
+            <!-- Spine Surgery -->
+            <div class="surgery-label">Spine Surgery</div>
+            <label
+              ><input type="radio" name="Spine_Surgery" value="Yes" />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="Spine_Surgery" value="No" /> No</label
+            >
+
+            <!-- Hernia Repair -->
+            <div class="surgery-label">Hernia Repair</div>
+            <label
+              ><input type="radio" name="Hernia_Repair" value="Yes" />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="Hernia_Repair" value="No" /> No</label
+            >
+
+            <!-- Tonsillectomy -->
+            <div class="surgery-label">Tonsillectomy</div>
+            <label
+              ><input type="radio" name="Tonsillectomy" value="Yes" />
+              Yes</label
+            >
+            <label
+              ><input type="radio" name="Tonsillectomy" value="No" /> No</label
+            >
+          </div>
+
+          <div class="field">
+            <label>Other Surgical History:</label>
+            <input type="text" placeholder="Describe if applicable" />
+          </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- FAMILY HISTORY -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Family History</h2>
+
+          <div class="family-table-wrapper">
+            <table class="family-table">
+              <thead>
+                <tr>
+                  <th>Relation</th>
+                  <th>Alive?</th>
+
+                  <th>Alcohol Abuse</th>
+                  <th>Arthritis</th>
+                  <th>Asthma</th>
+                  <th>Autoimmune Disorder</th>
+                  <th>Cancer</th>
+                  <th>COPD</th>
+                  <th>Depression</th>
+                  <th>Diabetes</th>
+                  <th>Drug Abuse</th>
+                  <th>Heart Disease</th>
+                  <th>Hyperlipidemia</th>
+                  <th>Hypertension</th>
+                  <th>Kidney Disease</th>
+                  <th>Learning Disability</th>
+                  <th>Mental Illness</th>
+                  <th>Stroke</th>
+                  <th>Vision Loss</th>
+
+                  <th>Comments</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- ====== MOTHER ====== -->
+                <tr>
+                  <td>Mother</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_mother" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_mother" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- 18 condition checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== FATHER ====== -->
+                <tr>
+                  <td>Father</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_father" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_father" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- 18 boxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== SISTER 1 ====== -->
+                <tr>
+                  <td>Sister 1</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_sister1" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_sister1" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== SISTER 2 ====== -->
+                <tr>
+                  <td>Sister 2</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_sister2" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_sister2" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== SISTER 3 ====== -->
+                <tr>
+                  <td>Sister 3</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_sister3" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_sister3" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== BROTHER 1 ====== -->
+                <tr>
+                  <td>Brother 1</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_brother1" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_brother1" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== BROTHER 2 ====== -->
+                <tr>
+                  <td>Brother 2</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_brother2" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_brother2" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== BROTHER 3 ====== -->
+                <tr>
+                  <td>Brother 3</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_brother3" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_brother3" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== SON 1 ====== -->
+                <tr>
+                  <td>Son 1</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_son1" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_son1" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== SON 2 ====== -->
+                <tr>
+                  <td>Son 2</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_son2" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_son2" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== DAUGHTER 1 ====== -->
+                <tr>
+                  <td>Daughter 1</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_daughter1" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_daughter1" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== DAUGHTER 2 ====== -->
+                <tr>
+                  <td>Daughter 2</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_daughter2" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_daughter2" value="N" />
+                      N</label
+                    >
+                  </td>
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== MATERNAL GRANDMOTHER ====== -->
+                <tr>
+                  <td>Mat GM</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_matgm" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_matgm" value="N" />
+                      N</label
+                    >
+                  </td>
+
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== MATERNAL GRANDFATHER ====== -->
+                <tr>
+                  <td>Mat GF</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_matgf" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_matgf" value="N" />
+                      N</label
+                    >
+                  </td>
+
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== PATERNAL GRANDMOTHER ====== -->
+                <tr>
+                  <td>Pat GM</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_patgm" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_patgm" value="N" />
+                      N</label
+                    >
+                  </td>
+
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+
+                <!-- ====== PATERNAL GRANDFATHER ====== -->
+                <tr>
+                  <td>Pat GF</td>
+                  <td>
+                    <label
+                      ><input type="radio" name="alive_patgf" value="Y" />
+                      Y</label
+                    >
+                    <label
+                      ><input type="radio" name="alive_patgf" value="N" />
+                      N</label
+                    >
+                  </td>
+
+                  <!-- checkboxes -->
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" /></td>
+
+                  <td><input type="text" class="comment-input" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="family-options">
+            <label><input type="checkbox" /> Adopted</label>
+            <label><input type="checkbox" /> Family History Unknown</label>
+          </div>
+
+          <div class="other-family">
+            <label>Other Family History:</label>
+            <input type="text" placeholder="Write here..." />
+          </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- DOCTOR ADVICE SECTION -->
+        <!-- ========================================================= -->
+        <div class="section">
+          <h2>Provider / Doctor Advice</h2>
+
+          <label
+            ><input type="checkbox" id="adviceGiven" /> Doctor has provided
+            medical advice</label
+          >
+
+          <div class="field">
+            <label>Advice Notes:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="two-col" style="margin-top: 10px">
+            <div class="field">
+              <label>Doctor's Name:</label>
+              <input type="text" />
+            </div>
+
+            <div class="field">
+              <label>Date:</label>
+              <input type="date" />
+            </div>
+          </div>
+
+          <div class="signature-block">
+            <label>Signature:</label>
+            <div class="signature-line"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+    <script src="form.js"></script>
+  </body>
+</html>
